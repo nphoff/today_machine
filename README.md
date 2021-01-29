@@ -8,6 +8,7 @@ Instead of having a printer, I'm going to send today's report to a remarkable ta
 ## Run
 ```
 python3 -m venv env
+source env/bin/activate
 python3 -m pip install requests
 python3 -m pip install todoist-python 
 python3 -m pip install pytz

@@ -14,7 +14,7 @@ from todoist.api import TodoistAPI
 
 PREFIX_STRING = """
 *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
-      Good morning goldsam!
+      Good morning Nathan!
 *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
 
 Here are today's tasks:

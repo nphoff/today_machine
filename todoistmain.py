@@ -7,7 +7,7 @@ def main():
     print("todo manager instantiated...")
     todo_string = todo_manager.getToDoListString()
     # TODO: send things to remarkable
-
+    print(todo_string)
 
 main()
 
