@@ -29,16 +29,17 @@ Then go ahead and add your own token to the file lib/secrets.py
 N.B. This file is automatically .gitignored so it shouldn't get added,
 however be extra careful to never share your token in git!
 
-# TODOS:
+## TODOS:
 
-[x] Remove code for controlling printer
-[ ] Write markdown file to a temp file
-[ ] Figure out how to write a pdf from the markdown
- - options are mdpdf (on pypi), and some version of pandoc + latex
- - pandoc + latex is more flexible, mdpdf is easier
- - pandoc + latex is also a pretty well troden path
- - markdown -> pdf should be:
-  `pandoc manual.txt --pdf-engine=xelatex -o manual.pdf`
-[ ] Figure out how to send things to remarkable
-  [ ] Figure out how to use the rmapy
-[ ] 
+- [x] Remove code for controlling printer
+- [x] Write markdown file to a temp file
+- [x] Figure out how to write a pdf from the markdown
+  - options are mdpdf (on pypi), and some version of pandoc + latex
+  - pandoc + latex is more flexible, mdpdf is easier
+  - pandoc + latex is also a pretty well troden path
+  - markdown -> pdf should be:
+  - `pandoc manual.txt --pdf-engine=xelatex -o manual.pdf`
+- [ ] Figure out how to send things to remarkable
+  - [ ] Figure out how to use the rmapy
+- [ ] Get quotes from other projects and add them to the daily thing
+- [ ] Grab forecast data
