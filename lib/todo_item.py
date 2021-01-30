@@ -17,7 +17,7 @@ class TodoItem:
         return repr((self.due_time, self.due_date))
 
     def __str__(self):
-        return "%s[ ] %s\n" % (self.getDueTimeString(), self.getContent())
+        return "%s- [ ] %s\n" % (self.getDueTimeString(), self.getContent())
 
     def getContent(self) -> str:
         return self.content

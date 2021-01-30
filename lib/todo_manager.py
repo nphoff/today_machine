@@ -13,11 +13,9 @@ from .todo_item import TodoItem
 from todoist.api import TodoistAPI
 
 PREFIX_STRING = """
-*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
-      Good morning Nathan!
-*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+# Good morning Nathan!
 
-Here are today's tasks:
+## Here are today's tasks:
 """
 
 class TodoManager:
@@ -73,11 +71,9 @@ class TodoManager:
         s = PREFIX_STRING
         for task in today:
             s += str(task)
-        s += "\nHere are your overdue tasks:\n"
+        s += "\n## Here are your overdue tasks:\n"
         for task in overdue:
             s += str(task)
-
-        s += "[ ]\n[ ]\n[ ]\n\n\n\n\n"
 
         return s
 
