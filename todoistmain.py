@@ -1,28 +1,29 @@
 from lib.todo_manager import TodoManager
 # uncomment to try on the rasp pi
-from time import sleep
 from rmapy.document import ZipDocument
 from rmapy.api import Client
 
+from datetime import date
+
 import subprocess
+
+
+MARKDOWN_PATH = '/tmp/today.md'
 
 def main():
     todo_manager = TodoManager()
-    print("todo manager instantiated...")
+    today = date.today()
+    pdf_path = '/tmp/Today-{}.pdf'.format(today.strftime("%b-%d-%Y"))
     todo_string = todo_manager.getToDoListString()
-    # TODO: send things to remarkable
-    f = open("/tmp/output.md", "w")
+    f = open(MARKDOWN_PATH, "w")
     f.write(todo_string)
     f.close()
-    r = subprocess.run(['pandoc', '-s', '/tmp/output.md', '-o', '/tmp/output.pdf'], stdout=subprocess.PIPE, universal_newlines=True)
+    r = subprocess.run(['pandoc', '-s', MARKDOWN_PATH, '-o', pdf_path], stdout=subprocess.PIPE, universal_newlines=True)
     rm = Client()
     rm.renew_token()
-    rawDocument = ZipDocument(doc='/tmp/output.pdf')
+    rawDocument = ZipDocument(doc=pdf_path)
     rm.upload(rawDocument)
     print(todo_string)
-    print("todo manager done!")
 
 main()
-
-
 
