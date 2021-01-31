@@ -4,11 +4,21 @@ Taken from https://github.com/goldsamantha/today_machine
 
 Instead of having a printer, I'm going to send today's report to a remarkable tablet
 
-## Prerequisites (pandoc + LaTeX)
+## Prerequisites 
+
+###(pandoc + LaTeX)
+
 ```
 sudo apt-get install pandoc
 sudo apt-get install texlive texlive-base
 ```
+
+### Remarkable auth
+
+There is some setup that you have to do with your remarkable to register this API use as a "device": 
+http://rmapi.subutux.be/quickstart.html#registering-the-api-client
+
+Once you do this once, every subsequent call will grab a new token and everything should work out fine.
 
 ## Run
 
@@ -39,7 +49,7 @@ however be extra careful to never share your token in git!
   - pandoc + latex is also a pretty well troden path
   - markdown -> pdf should be:
   - `pandoc manual.txt --pdf-engine=xelatex -o manual.pdf`
-- [ ] Figure out how to send things to remarkable
-  - [ ] Figure out how to use the rmapy
+- [x] Figure out how to send things to remarkable
+  - [x] Figure out how to use the rmapy
 - [ ] Get quotes from other projects and add them to the daily thing
 - [ ] Grab forecast data

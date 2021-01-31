@@ -1,6 +1,8 @@
 from lib.todo_manager import TodoManager
 # uncomment to try on the rasp pi
 from time import sleep
+from rmapy.document import ZipDocument
+from rmapy.api import Client
 
 import subprocess
 
@@ -13,8 +15,12 @@ def main():
     f.write(todo_string)
     f.close()
     r = subprocess.run(['pandoc', '-s', '/tmp/output.md', '-o', '/tmp/output.pdf'], stdout=subprocess.PIPE, universal_newlines=True)
+    rm = Client()
+    rm.renew_token()
+    rawDocument = ZipDocument(doc='/tmp/output.pdf')
+    rm.upload(rawDocument)
     print(todo_string)
-    print(r.stdout)
+    print("todo manager done!")
 
 main()
 
