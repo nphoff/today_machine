@@ -2,3 +2,4 @@ todoist-python
 pytz
 requests
 rmapy
+beautifulsoup4
